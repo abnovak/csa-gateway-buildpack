@@ -5,7 +5,14 @@ rm -f $psmgr
 mkfifo $psmgr
 
 # Evaluate config to get $PORT
-erb config/nginx.conf.erb > config/nginx.conf
+if [[ -n $USE_NODE  ]]
+then
+  echo "Using NODE EJS to compile nginx.conf"
+  node config/nginx.conf.js > config/nginx.conf
+else
+  echo "Using ERB to compile nginx.conf"
+  erb config/nginx.conf.erb > config/nginx.conf
+fi
 
 n=1
 while getopts :f option ${@:1:2}
