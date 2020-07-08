@@ -50,7 +50,6 @@ echo "Downloading $njs_url"
 (
   cd nginx-${NGINX_VERSION}
   ./configure \
-    --with-openssl=${OPENSSL_SOURCE_PATH} \
     --with-pcre=pcre-${PCRE_VERSION} \
     --with-zlib=zlib-${ZLIB_VERSION} \
     --with-http_gzip_static_module \
@@ -68,7 +67,6 @@ echo "Downloading $njs_url"
   cd nginx-${NGINX_VERSION}
   ./configure \
     --with-debug \
-    --with-openssl=${OPENSSL_SOURCE_PATH} \
     --with-pcre=pcre-${PCRE_VERSION} \
     --with-zlib=zlib-${ZLIB_VERSION} \
     --with-http_gzip_static_module \
