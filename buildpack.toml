@@ -3,7 +3,6 @@ api = "0.2"
 
 # Buildpack ID and metadata
 [buildpack]
-id = "com.examples.buildpacks.ruby"
 version = "0.0.1"
 name = "CSA Gateway Nginx Buildpack"
 
