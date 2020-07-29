@@ -8,7 +8,7 @@ mkfifo $psmgr
 if [[ -n $USE_NODE  ]]
 then
   echo "Using NODE EJS to compile nginx.conf"
-  node config/nginx.conf.js > config/nginx.conf
+  node config/nginx.conf.js -o config/nginx.conf
 else
   echo "Using ERB to compile nginx.conf"
   erb config/nginx.conf.erb > config/nginx.conf
